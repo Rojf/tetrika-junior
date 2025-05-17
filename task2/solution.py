@@ -24,7 +24,9 @@ def format_count_to_csv(data: DefaultDict[str, int]) -> str:
 def count_animals_by_first_letter(html: str, count: DefaultDict[str, int]) -> None:
     soup = BeautifulSoup(html, "html.parser")
 
-    for li in soup.select("div.mw-category-generated div#mw-pages div.mw-content-ltr ul li"):
+    for li in soup.select(
+        "div.mw-category-generated div#mw-pages div.mw-content-ltr ul li"
+    ):
         tag = li.find("a")
 
         if tag:
@@ -60,7 +62,7 @@ def scrape_animals_and_save_counts() -> None:
         if response.status_code == 200:
             html = response.text
             count_animals_by_first_letter(html, count_animals)
-             
+
             path = get_next_page_path(html)
 
     data = format_count_to_csv(count_animals)

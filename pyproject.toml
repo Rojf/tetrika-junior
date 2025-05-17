@@ -26,3 +26,7 @@ profile = "black"
 line_length = 90
 known_first_party = ["api", "config", "utils", "services"]
 sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "migrations", ".venv"]
+tests = ["B101", "B102", "B110", "B404", "B509"]

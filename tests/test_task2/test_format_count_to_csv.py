@@ -1,12 +1,12 @@
 import unittest
-from unittest.mock import patch, mock_open
 from collections import defaultdict
+from unittest.mock import mock_open, patch
 
 from task2.solution import (
-    write_csv,
-    format_count_to_csv,
     count_animals_by_first_letter,
-    get_next_page_path
+    format_count_to_csv,
+    get_next_page_path,
+    write_csv,
 )
 
 
@@ -60,4 +60,3 @@ class TestAnimalScraper(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
