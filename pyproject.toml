@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "tetrika-junior"
+version = "0.1.0"
+description = ""
+authors = ["Blank <rojermen96@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.13.4"
+pre-commit = "^4.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 90
+skip-string-normalization = true
+skip-magic-trailing-comma = false
+
+[tool.isort]
+profile = "black"
+line_length = 90
+known_first_party = ["api", "config", "utils", "services"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
